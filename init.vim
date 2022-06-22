@@ -24,6 +24,7 @@ Plug            'dyng/ctrlsf.vim'
 
 Plug            'nanotech/jellybeans.vim'
 Plug            'luchermitte/lh-vim-lib'
+Plug            'mhinz/vim-startify'
 call plug#end()
 
 
