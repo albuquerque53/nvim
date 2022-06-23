@@ -15,12 +15,12 @@ Plug            'fatih/vim-go',                     { 'do': ':GoUpdateBinaries' 
 
 Plug            'airblade/vim-gitgutter'
 
-Plug            'ctrlpvim/ctrlp.vim'
+Plug            'nvim-lua/plenary.nvim'
+Plug            'nvim-telescope/telescope.nvim'
 Plug            'mg979/vim-visual-multi',           {'branch': 'master'}
 
 Plug            'vim-airline/vim-airline'
 Plug            'vim-airline/vim-airline-themes'
-Plug            'dyng/ctrlsf.vim'
 
 Plug            'nanotech/jellybeans.vim'
 Plug            'luchermitte/lh-vim-lib'
@@ -46,7 +46,8 @@ set             mouse=a
 let 		    mapleader="\\"
 
 " misc binds
-nnoremap        <leader>fs      :CtrlSF 
+nnoremap        <leader>fg      <cmd>Telescope live_grep<cr>
+nnoremap        <leader>ff      <cmd>Telescope find_files<cr>
 nnoremap 	    <leader>fcs     :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap 	    <leader>fce     :edit ~/.config/nvim/init.vim<cr>
 nnoremap 	    <leader>fcl     :source ~/.config/nvim/init.vim<cr>
