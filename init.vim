@@ -54,9 +54,10 @@ nnoremap 	    <leader>fe      :CocCommand explorer<Enter>
 " go binds
 nnoremap 	    <leader>lr      :GoRun<cr>
 nnoremap 	    <leader>lt      :GoTest<cr>
-nnoremap 	    <leader>lds     :GoDebugStart<cr>
+nnoremap 	    <leader>lds     :GoDebugTest<cr>
 nnoremap 	    <leader>ldp     :GoDebugStop<cr>
 nnoremap 	    <leader>ldc     :GoDebugContinue<cr>
+nnoremap 	    <leader>ldn     :GoDebugNext<cr>
 nnoremap 	    <leader>ldb     :GoDebugBreakpoint<cr>
 
 
