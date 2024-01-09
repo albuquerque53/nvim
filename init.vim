@@ -4,24 +4,27 @@
 "((_)\  )\ ((_)\  )\  )\  /(_))((_)()\  
 " _((_)((_)  ((_)((_)((_)(_))  (_()((_) 
 "| \| || __|/ _ \\ \ / / |_ _| |  \/  |     author: albuquerque53
-"| .` || _|| (_) |\ V /   | |  | |\/| |     role:   go developer
+"| .` || _|| (_) |\ V /   | |  | |\/| |     role:   PHP/laravel developer
 "|_|\_||___|\___/  \_/   |___| |_|  |_|                                     
                              
 " Plugins "{{{
 " ---------------------------------------------------------------------
 call plug#begin()
 Plug            'neoclide/coc.nvim',                {'branch': 'release'}
-Plug            'fatih/vim-go',                     { 'do': ':GoUpdateBinaries' }
 
-Plug            'airblade/vim-gitgutter'
+Plug            'catppuccin/nvim', { 'as': 'catppuccin' }
 
-Plug            'mg979/vim-visual-multi',           {'branch': 'master'}
+Plug            'jwalton512/vim-blade'
 
-Plug            'vim-airline/vim-airline'
-Plug            'vim-airline/vim-airline-themes'
+Plug            'nvim-lua/plenary.nvim'
+Plug            'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
+Plug            'nvim-telescope/telescope-file-browser.nvim'
 
-Plug            'nanotech/jellybeans.vim'
-Plug            'luchermitte/lh-vim-lib'
+
+Plug            'nvim-tree/nvim-web-devicons' " Recommended (for coloured icons)
+Plug            'akinsho/bufferline.nvim', { 'tag': '*' }
+Plug            'nvim-lualine/lualine.nvim'
+Plug            'm4xshen/autoclose.nvim'
 call plug#end()
 
 
@@ -40,37 +43,43 @@ set             mouse=a
 
 " KeyBinds "{{{
 " ---------------------------------------------------------------------
-let 		    mapleader="\\"
+let 		    mapleader=" "
 
 " misc binds
 nnoremap 	    <leader>fcs     :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap 	    <leader>fce     :edit ~/.config/nvim/init.vim<cr>
 nnoremap 	    <leader>fcl     :source ~/.config/nvim/init.vim<cr>
-nnoremap 	    <leader><space> :nohlsearch<cr>
+nnoremap 	    <leader>ho      :nohlsearch<cr>
 
 " file binds
 nnoremap 	    <leader>fe      :CocCommand explorer<Enter>
-
-" go binds
-nnoremap 	    <leader>lr      :GoRun<cr>
-nnoremap 	    <leader>lt      :GoTest<cr>
-nnoremap 	    <leader>lds     :GoDebugTest<cr>
-nnoremap 	    <leader>ldp     :GoDebugStop<cr>
-nnoremap 	    <leader>ldc     :GoDebugContinue<cr>
-nnoremap 	    <leader>ldn     :GoDebugNext<cr>
-nnoremap 	    <leader>ldb     :GoDebugBreakpoint<cr>
-
+nnoremap        <leader>ff      <cmd>Telescope find_files<cr>
+nnoremap        <leader>fg      <cmd>Telescope live_grep<cr>
+nnoremap        <leader>fb      <cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>
+nnoremap        <leader>fh      <cmd>Telescope help_tags<cr>
+nnoremap        <leader>cl      <cmd>bd<cr>
+nnoremap        gt              <cmd>BufferLineCycleNext<cr>
+nnoremap        gT              <cmd>BufferLineCyclePrev<cr>
 
 " Style "{{{
 " ---------------------------------------------------------------------
-colorscheme     jellybeans
+colorscheme catppuccin-latte
 
 
 " Conf "{{{
 " ---------------------------------------------------------------------
+set termguicolors
+lua << EOF
+require("bufferline").setup{}
+EOF
 
-" go debug conf
-let             g:go_debug_windows = {
-          \ 'vars':       'rightbelow 60vnew',
-          \ 'stack':      'rightbelow 10new',
-\ }
+lua << END
+require('lualine').setup()
+END
+
+lua << END
+require('autoclose').setup()
+END
+
+hi Normal guibg=NONE ctermbg=NONE
+hi NormalFloat guibg=NONE ctermbg=NONE

@@ -12,8 +12,5 @@
   },
   "coc.preferences.formatOnSaveFiletypes": [
     "go"
-  ],
-  "coc.preferences.jumpCommand": ":SplitIfNotOpen4COC",
-  "explorer.icon.enableNerdfont": true,
-  "explorer.file.showHiddenFiles": true
+  ]
 }
