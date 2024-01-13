@@ -61,26 +61,3 @@ nnoremap        <leader>cl      <cmd>bd<cr>
 nnoremap        <leader>ca      <cmd>bufdo bd<cr>
 nnoremap        gt              <cmd>BufferLineCycleNext<cr>
 nnoremap        gT              <cmd>BufferLineCyclePrev<cr>
-
-" Style "{{{
-" ---------------------------------------------------------------------
-colorscheme catppuccin-latte
-
-
-" Conf "{{{
-" ---------------------------------------------------------------------
-set termguicolors
-lua << EOF
-require("bufferline").setup{}
-EOF
-
-lua << END
-require('lualine').setup()
-END
-
-lua << END
-require('autoclose').setup()
-END
-
-hi Normal guibg=NONE ctermbg=NONE
-hi NormalFloat guibg=NONE ctermbg=NONE
