@@ -10,19 +10,19 @@
 " Plugins "{{{
 " ---------------------------------------------------------------------
 call plug#begin()
-Plug            'neoclide/coc.nvim',                {'branch': 'release'}
+Plug            'neoclide/coc.nvim',                        {'branch': 'release'}
 
-Plug            'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug            'catppuccin/nvim',                          { 'as': 'catppuccin' }
 
 Plug            'jwalton512/vim-blade'
 
 Plug            'nvim-lua/plenary.nvim'
-Plug            'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
+Plug            'nvim-telescope/telescope.nvim',            { 'tag': '0.1.5' }
 Plug            'nvim-telescope/telescope-file-browser.nvim'
 
 
-Plug            'nvim-tree/nvim-web-devicons' " Recommended (for coloured icons)
-Plug            'akinsho/bufferline.nvim', { 'tag': '*' }
+Plug            'nvim-tree/nvim-web-devicons'
+Plug            'akinsho/bufferline.nvim',                  { 'tag': '*' }
 Plug            'nvim-lualine/lualine.nvim'
 Plug            'm4xshen/autoclose.nvim'
 call plug#end()
@@ -58,6 +58,7 @@ nnoremap        <leader>fg      <cmd>Telescope live_grep<cr>
 nnoremap        <leader>fb      <cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>
 nnoremap        <leader>fh      <cmd>Telescope help_tags<cr>
 nnoremap        <leader>cl      <cmd>bd<cr>
+nnoremap        <leader>ca      <cmd>bufdo bd<cr>
 nnoremap        gt              <cmd>BufferLineCycleNext<cr>
 nnoremap        gT              <cmd>BufferLineCyclePrev<cr>
 
