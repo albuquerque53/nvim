@@ -114,7 +114,7 @@ keyset("x", "<leader>r", "<Plug>(coc-codeaction-refactor-selected)", { silent = 
 keyset("n", "<leader>r", "<Plug>(coc-codeaction-refactor-selected)", { silent = true })
 
 -- Run the Code Lens actions on the current line
-keyset("n", "<leader>cl", "<Plug>(coc-codelens-action)", opts)
+-- keyset("n", "<leader>cl", "<Plug>(coc-codelens-action)", opts)
 
 
 -- Map function and class text objects
@@ -171,7 +171,7 @@ keyset("n", "<space>a", ":<C-u>CocList diagnostics<cr>", opts)
 -- Manage extensions
 keyset("n", "<space>e", ":<C-u>CocList extensions<cr>", opts)
 -- Show commands
-keyset("n", "<space>c", ":<C-u>CocList commands<cr>", opts)
+-- keyset("n", "<space>c", ":<C-u>CocList commands<cr>", opts)
 -- Find symbol of current document
 keyset("n", "<space>o", ":<C-u>CocList outline<cr>", opts)
 -- Search workspace symbols
