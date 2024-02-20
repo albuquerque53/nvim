@@ -1,10 +1,1 @@
-```
-"    )         )          (       *     
-" ( /(      ( /(          )\ )  (  `    
-" )\()) (   )\()) (   (  (()/(  )\))(   
-"((_)\  )\ ((_)\  )\  )\  /(_))((_)()\  
-" _((_)((_)  ((_)((_)((_)(_))  (_()((_) 
-"| \| || __|/ _ \\ \ / / |_ _| |  \/  |
-"| .` || _|| (_) |\ V /   | |  | |\/| |
-"|_|\_||___|\___/  \_/   |___| |_|  |_|
-``` 
+:warning: This repo is archived, it was migrated to: https://github.com/albuquerque53/dotfiles. You can check the updated version there.
